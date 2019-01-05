@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>医生的注册网页</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="images/login.js"></script>
+<link href="css/login2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>医生的个人注册<sup>2016</sup></h1>
+
+<div class="login" style="margin-top:50px;">
+        <div class="header">
+        <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">快速登录</a>
+            <a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">快速注册</a><div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
+        </div>
+    </div>    
+  
+    
+    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">    
+
+            <!--登录-->
+            <div class="web_login" id="web_login">
+               
+               
+               <div class="login-box">
+    
+            
+            <div class="login_form">
+                <form  name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" ><input type="hidden" name="did" value="0"/>
+               <input type="hidden" name="to" value="log"/>
+                <div class="uinArea" id="uinArea">
+                <label class="input-tips" for="u">帐号：</label>
+                <div class="inputOuter" id="uArea">
+                    
+                    <input type="text" id="u" name="name" class="inputstyle"/>
+                </div>
+                </div>
+                <div class="pwdArea" id="pwdArea">
+               <label class="input-tips" for="p">密码：</label> 
+               <div class="inputOuter" id="pArea">
+                    
+                    <input type="password" id="p" name="password" class="inputstyle"/>
+                </div>
+                </div>
+               
+                <div style="padding-left:50px;margin-top:20px;"><input type="button" value="登 录" style="width:150px;" class="button_blue" onclick="mysubmit2()" /></div>
+              </form>
+           </div>
+           
+                </div>
+               
+            </div>
+            <!--登录end-->
+  </div>
+
+  <!--注册-->
+    <div class="qlogin" id="qlogin" style="display: none; ">
+   
+    <div class="web_login" >
+    <form name="form2" id="regUser222" >
+          <input type="hidden" name="to" value="reg"/>
+                           <input type="hidden" name="did" value="0"/>
+        <ul class="reg_form" id="reg-ul">
+                <li>
+                    
+                    <label for="user"  class="input-tips2">用户名：</label>
+                    <div class="inputOuter2">
+                        <input type="text" id="user" name="name"  class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+                <li>
+                 <label for="qq" class="input-tips2" >邮箱：</label>
+                    <div class="inputOuter2">
+                       
+                        <input type="text" id="email" name="email"  class="inputstyle2"/>
+                    </div>
+                   
+                </li>
+                  <label for="qq" class="input-tips2" >手机号：</label>
+                    <div class="inputOuter2">
+                       
+                        <input type="text" id="phonenumber" name="phonenumber"  class="inputstyle2"/>
+                    </div>
+                   
+                </li>
+                <li>
+                 <label for="qq" class="input-tips2">医生类型：</label>
+                    <div class="inputOuter2">
+                       
+                    <select   class="inputstyle2" id="classify1">
+                        <option value ="1">外科</option>
+                        <option value ="2">内科</option>
+                        <option value="3">儿科</option>
+                        <option value="4">妇科</option>
+                    </select>
+                    </div>
+                   
+                </li>
+                <li>
+                 <label for="qq" class="input-tips2">个人简介：</label>
+                    <div class="inputOuter2">
+                       
+                        <input type="text" id="introdouce" name=" introduce"  class="inputstyle2 "/>
+                    </div>
+                   
+                </li>
+                
+                <li>
+                <label for="passwd" class="input-tips2">密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd"  name="password1" maxlength="16" class="inputstyle2" minlength="6"/>
+                    </div>
+                    
+                </li>
+                <li>
+                <label for="passwd2" class="input-tips2">确认密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd2" name="password2" maxlength="16" class="inputstyle2" minlength="6" />
+                    </div>
+                    
+                </li>
+                
+                
+               <li>
+                    <div class="inputArea">
+                       <input type="button"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="点击快速注册" onclick="mysubmit()" />
+                    </div>
+                    
+                </li>
+
+                <div class="cl"></div>
+            </ul>
+            </form>
+           
+    
+    </div>
+   
+    
+    </div>
+    <!--注册end-->
+</div>
+<script type="text/javascript">
+  function  mysubmit(){
+            $.ajax({
+            type:  "POST",
+            url:"http://119.29.152.53/php/login.php",
+            data: {
+               // username: $("#user").val(),
+                Email:$("#email").val(),
+               // phone:$("#phonenumber").val(),
+              //  classify:$("#classify1").val(),
+               // introduce:$("#introdouce").val(),
+                Password:$("#passwd2").val(),
+                
+            },
+
+            //dataType: "json",
+             success: function(){
+                // $(".web_qr_login").hide();
+                // $("#regUser222").hide();
+               //  $(".web_qr_login).slideDown();
+                 
+                 
+             }
+            
+             
+     
+        })
+
+            
+    
+}
+ function  mysubmit2(){
+            $.ajax({
+            type:  "POST",
+            url:"http://119.29.152.53/php/login.php",
+            data: {
+                Email: $("#u").val(),
+                Password:$("#p").val(),
+                
+                
+            },
+
+
+            success: function(msg){
+                   alert(msg);
+                 //  window.location.href="http://127.0.0.1/Doctor/personal.html";
+                      }
+     
+        })
+
+            
+    
+}
+</script>
+
+   <script src="js/jquery.validate-1.13.1.js" type="text/javascript" charset="utf-8">
+   
+   </script>
+   <script type="text/javascript">
+   </script>
+</body>
+</html>

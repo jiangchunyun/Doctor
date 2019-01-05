@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>医生的个人界面</title>
+		<link rel="stylesheet" type="text/css" href="css/personal.css"/>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	</head>
+		<div class="main">
+              <div class="m_1">
+	            <button id="buttons11" value="1">我的个人信息</button>	         
+              </div>	
+              <div class="m_2">
+	             <button value="2">想要预约你的人</button>
+              </div>
+              <div class="m_3">
+	             <button value="2">你同意预约的人</button>
+              </div>
+                <div class="m_4">
+	             <button value="2">修改个人信息</button>
+              </div>
+              <div class="m3">
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+              </div>
+              <div class="m4">
+              </div>
+              <div class="m5">
+              	
+              </div>
+              <div class="m6">
+              	<form>
+              		<input type="text" placeholder="请输入要修改的用户名" id="xiu" />
+              		<input type="text" placeholder="请输入要修改的密码" id="xiu"/>
+              		<input type="text" placeholder="请确定要修改的密码"id="xiu"/>
+              		<input type="text" placeholder="请输入要修改的手机号"id="xiu"/>
+              		<input type="text" placeholder="请输入要修改的医生类型"id="xiu"/>
+              		<input type="text" placeholder="请输入要修改的手机号"id="xiu"/> 
+              		<input type="submit"  value="确定修改" id="butt"/>        
+              	</form>
+              </div>
+		</div>
+		
+		<script type="text/javascript">
+	       $(".m_1").click(
+	       	function()
+	       	{
+	       	   $(".m4").hide();
+	       	   $(".m3").hide();
+	       	   $(".m5").hide();
+	       	   $(".m6").hide();
+	       	   $(".m3").slideDown();
+	       	}
+	       );
+	       $(".m_2").click(
+	       	function()
+	       	{
+	       	   $(".m4").hide();
+	       	   $(".m3").hide();
+	       	   $(".m5").hide();
+	       	   $(".m6").hide();
+	       	   $(".m4").slideDown();
+	       	}
+	       );
+	        $(".m_3").click(
+	       	function()
+	       	{
+	       	   $(".m4").hide();
+	       	   $(".m3").hide();
+	       	   $(".m5").hide();
+	       	   $(".m6").hide();
+	       	   $(".m5").slideDown();
+	       	}
+	       );
+	        $(".m_4").click(
+	       	function()
+	       	{
+	       	   $(".m4").hide();
+	       	   $(".m3").hide();
+	       	   $(".m5").hide();
+	       	   $(".m6").hide();
+	       	   $(".m6").slideDown();
+	       	}
+	       );
+	       $(document).ready(function(){
+  	  		$.ajax({
+   			type:  "POST",
+   			url:"php/D_information.php",
+   			dataType: "json",
+			 success: function(data){
+               var obj = eval(data); 
+               var ps=document.getElementById("xiu");
+               ps[0].innerHTML=obj[0];
+	               alert(obj[0]);
+                       }
+		
+   		})
+  }) 
+		</script>
+	</body>
+</html>

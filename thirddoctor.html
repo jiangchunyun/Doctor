@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>zGallering Free Html5 Responsive Template</title>
+	<meta name="description" content="Free Html5 Templates and Free Responsive Themes Designed by Kimmy | zerotheme.com">
+	<meta name="author" content="www.zerotheme.com">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js" >
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js"></script>
+	</script>
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/appoint_doctor.css"/>
+	<link rel="stylesheet" href="css/thirddoctor.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/appoint_doctor.css"/>
+   
+	
+	<link href='./images/favicon.ico' rel='icon' type='image/x-icon'/>
+</head>
+<body>
+<header> 
+	<div class="wrap-header">
+		
+		<nav>
+			<ul>
+			  <li class="current"><a href="mian.html">主页</a></li>
+			  <li><a href="seconddoctor.html">寻医</a></li>
+			  <li><a href="single.html">问药</a></li>
+			  <li><a href="single.html">器材</a></li>
+		  </ul>
+		</nav>
+	</div>
+</header>
+
+<section id="content">
+	<div class="feature">
+		<div style="clear:both; display:block; height:10px"></div>
+	</div>
+	<div class="welcome">
+		<p>请你适当的选择自己想要选择的医生，然后点击医生的图片进行预约</p>
+	</div>
+	<div class="zerogrid">		
+		<div class="row block01">
+			<div class="col-1-3">
+				<article>
+					<button><img src="" class="grayscale"/><h2 class="yyyyyyy">妇科医生   韩浩宇  如果你要预约点击图片进去描述自己的病情</h2></button>
+				</article>
+			</div>
+		<div class="col-1-3">
+				<article>
+					<button><img src="" class="grayscale"/><h2 class="yyyyyyy">妇科医生   韩浩宇  如果你要预约点击图片进去描述自己的病情</h2></button>
+				</article>
+			</div>
+			<div class="col-1-3">
+				<article>
+					<button><img src="" class="grayscale"/><h2 class="yyyyyyy">妇科医生   韩浩宇  如果你要预约点击图片进去描述自己的病情</h2></button>
+				</article>
+			</div>
+		<div class="col-1-3">
+				<article>
+					<button><img src="" class="grayscale"/><h2 class="yyyyyyy">妇科医生   韩浩宇  如果你要预约点击图片进去描述自己的病情</h2></button>
+				</article>
+			</div>
+			<div class="col-1-3">
+				<article>
+					<button><img src="" class="grayscale"/><h2 class="yyyyyyy">妇科医生   韩浩宇  如果你要预约点击图片进去描述自己的病情</h2></button>
+				</article>
+			</div>
+		<div class="col-1-3">
+				<article>
+					<button><img src="" class="grayscale"/><h2 class="yyyyyyy">妇科医生   韩浩宇  如果你要预约点击图片进去描述自己的病情</h2></button>
+				</article>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="modal" id="mymodal">
+	 <div class="main1">
+     	<form action="php/bespeak.php" method="get">
+     		<label for="username" class="cd-username111"></label>
+     		<input id="username" type="text" name="username" placeholder="请您输入您的姓名" />
+     		<label for="numberphone" ></label>
+     		<input id="numberphone" type="text" name="phonenumber" placeholder="请您输入正确的手机号"/>
+     		<label for="username"></label>
+     		<input id="username" type="text" name="doctorname" placeholder="请您输入您预约医生的姓名" />
+     		<label for="illness"></label>
+     		<input  type="text" id="illness" style="height: 100px;" name="about" placeholder="请描述您的病情"/>
+     		<input type="submit" id="submitbutton" class="btn btn-default"  value="一键挂号"/>
+     	</form> 	
+     </div>
+</div>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+<script>
+  $(function(){
+    $(".col-1-3").click(function(){
+      $("#mymodal").modal("toggle");
+    });
+  });
+    $(document).ready(function(){
+  	  		$.ajax({
+   			type:  "GET",
+   			url:"php/o_doctor_register.php",
+   			dataType: "json",
+			success: function(data){
+                   var divs=document.getElementsByClassName("yyyyyyy");
+		           var obj = eval(data);
+	               var  imgs=document.getElementsByTagName("img");
+		           for(var i=0;i<divs.length,i<obj.length;i++)
+		                  {
+		    
+		                   divs[i].innerHTML="姓名："+obj[i] [0]+"<br>"+"手机号："+obj[i] [1]+"<br>"+obj[i] [2];
+		                   imgs[i].src=obj[i] [3];
+		                   
+		                 
+		                  
+	 	                  }
+}
+		
+   		})
+  })
+</script>
+</body></html>  

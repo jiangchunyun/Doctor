@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" href="css/mian.css"  />
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="js/jquery-1.10.0.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.validate-1.13.1.js" type="text/javascript" charset="utf-8"></script>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+</head>
+<body>
+<div class="t_bg">
+	<div class="top">
+        	
+        <div class="top_m">    	
+        	
+        </div>
+        
+            <div class="demo">
+		     <nav class=" main_nav">	
+				<button class="but111" id="button666" ><b>用户登录</b></button>
+				<button class="but222" id="button777"><a href="login.html"><b>医生登录</b></a></button>
+				<button class="but222" id="button999" ><a href="mian.html"><b>注销账户</b></a></button>
+
+           </div>
+          </div>
+	
+	<div class="cd-user-modal"> 
+		<div class="cd-user-modal-container">
+			<ul class="cd-switcher">
+				<li><a href="#0" id="sub_1" onclick="changeColor('1')" style="background-color: white;">用户登录</a></li>
+				<li><a href="#0" id="sub_2" onclick="changeColor('2')">注册新用户</a></li>
+			</ul>
+			<div id="cd-login"> <!-- 登录表单 -->
+				<form class="cd-form" >
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signin-username">用户名</label>
+						<input class="full-width has-padding has-border" id="signin-username" type="text"  name="name" placeholder="输入用户名" onblur="user()">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">密码</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="password" name="password" placeholder="输入密码" onblur="password()">
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">记住登录状态</label>
+					</p>
+					<p class="fieldset">
+						<input class="full-width2" type="button" value="登 录" onclick="mysubmit()">
+					</p>
+				</form>
+			</div>
+
+			<div id="cd-signup"> <!-- 注册表单 -->
+				<form  class="cd-form" id="form11111"  action="php/common_register.php" method="get">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">用户名</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" name="name" placeholder="输入用户名">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">邮箱</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="text" name="email" placeholder="输入email">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">密码</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="password" name="password1"  placeholder="输入密码">
+					</p>
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">密码</label>
+						<input class="full-width has-padding has-border" id="signup-password2" type="password" name="password2" placeholder="请确定密码" onblur="password_same()">
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">我已阅读并同意 <a href="#0">用户协议</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width2" type="submit" value="注 册 新 用 户" onclick="finlishform()">
+					</p>
+				</form>
+			</div>
+
+			<a href="#0" class="cd-close-form">关闭</a>
+		</div>
+	</div> 
+    </div>
+</div>
+<div class="header">
+    <div class="head clearfix">
+        <div class="logo"></a></div>
+        <ul class="nav clearfix">
+            <li><a href="seconddoctor.html">预 约 就 诊</a></li>
+            <li><a href="#div2">药品</a></li>
+            <li onMouseOver="fenlei()"  onMouseOut="fenlei2()"><a href="#div3">医 疗 器 材</a>
+            	<div id="yilaofenlei">
+            		<a href=" material1.html">诊断性器材</a><br />
+                    <a href="material-2.html">治疗性器材</a><br />
+            	</div>
+            </li>
+            <li><a href="">健 康 指 南</a></li>
+            <li><a href="">联 系 我 们</a></li>
+        </ul>
+    </div>
+</div>
+<div id="container">
+		<div id="list" style="left: -1364px;">
+			<img src="images/235092-1311010I01351.jpg" alt="" style="height: 450px; width: 1364px;"/>
+			<img src="images/240468-140H00J00330.jpg" alt="" style="height: 450px; width: 1364px;"/>
+			<img src="images/14b3297074b352edfced91c189c05247.jpg" alt="" style="height:450px; width: 1364px;"/>
+			<img src="images/235092-1311010I01351.jpg" alt="" style="height: 450px; width: 1364px;"/>
+			<img src="images/240468-140H00J00330.jpg"  alt="" style="height: 450px; width: 1364px;"/>
+		</div>
+		<div id="buttons">
+			<span index="1" class="on"></span>
+			<span index="2"></span>
+			<span index="3"></span>
+		</div>
+		<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+		<a href="javascript:;" id="next" class="arrow">&gt;</a>
+	</div>
+	<script type="text/javascript">
+	  function  mysubmit(){
+            $.ajax({
+            type:  "GET",
+            url:"php/common_login.php",
+            data: {
+                name:$("#signin-username").val(),
+                password:$("#signin-password").val(),
+            },
+            dataType: "json",
+          success: function(data){
+                var obj=eval(data);
+                $(".cd-user-modal").hide();
+                alert("恭喜你登录成功");
+                $("#button999").show();
+                $("#button666").hide();
+                 $("#button777").hide();
+                $(".main_nav").append("登录的账号是"+obj);
+           }
+          })
+
+            
+    
+}
+   $(document).ready(function(){
+   	$("#form11111").validate({
+   		rules:{
+   			name:{
+   				required:true,
+   				minlength:2,
+   				maxlength:10,  				
+ 			     },
+ 			password1:{
+ 			required:true,
+  			minlength:6,
+   			maxlength:15,
+ 			}
+   		},
+   		messages:{
+   			name:{
+   			      required:"用户名必须填写",
+   			      minlength:"最小长度是2个字",
+   			      maxlength:"最大长度是10个字",
+   			},
+   			password1:{
+ 			required:"密码是必须填写的",
+  			minlength:"最小的长度是6位",
+   			maxlength:"最大的长度是15位",
+ 			}
+   			}
+   	})
+   		  	
+   }) 
+	</script>
+	</body>
+</html>
